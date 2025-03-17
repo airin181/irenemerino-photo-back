@@ -1,3 +1,3 @@
 module.exports = (req, res) => {
-     res.status(200).json({ message: 'Hello, backend!' });
+     res.status(200).json({ message: 'Hello, paco!' });
 };

@@ -5,6 +5,7 @@ const path = require('path');
 
 export function sendContactFormEmail(req: Request, res: Response) {
      const { name, email, via, otherVia, message, termsAccepted } = req.body;
+     console.log('pepe');
 
      if (!termsAccepted) {
           res.status(400).json({
