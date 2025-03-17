@@ -10,4 +10,8 @@ router.get('/get-instagram-feed', getInstagramData);
 // Contact Form Emailing
 router.post('/send-email', sendContactFormEmail);
 
+router.get('/hello', (req, res) => {
+     res.send('Hello, this is the backend response!');
+});
+
 export default router;

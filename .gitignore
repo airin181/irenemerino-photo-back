@@ -32,3 +32,4 @@ coverage
 
 # Variables de entorno
 .env
+.vercel
