@@ -1,11 +1,10 @@
 import transporter from '../config/nodemailer';
 import { Request, Response } from 'express';
 import fs from 'fs';
-const path = require('path');
+import path from 'path';
 
 export function sendContactFormEmail(req: Request, res: Response) {
      const { name, email, via, otherVia, message, termsAccepted } = req.body;
-     console.log('pepe');
 
      if (!termsAccepted) {
           res.status(400).json({
