@@ -4,6 +4,13 @@ import { getInstagramData } from '../controllers/instagramController';
 
 const router = express.Router();
 
+// test
+router.get('/', (req, res) => {
+     res.status(200).json({
+          message: 'IT WORKS!',
+     });
+});
+
 // Instagram Access Token
 router.get('/get-instagram-feed', getInstagramData);
 

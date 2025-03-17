@@ -12,9 +12,12 @@ const app = express();
 const port = process.env.PORT;
 
 const corsOptions = {
-     origin: 'http://localhost:5173', // Frontend URL
-     methods: ['GET', 'POST'],
-     allowedHeaders: ['Content-Type'],
+     origin: [
+          'http://localhost:5173',
+          'https://airin181.github.io/irenemerino-photo/',
+     ], // Frontend URL
+     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+     allowedHeaders: ['Content-Type', 'Authorization'],
      credentials: true, // allows cookies delivery
 };
 app.use(cors(corsOptions));
