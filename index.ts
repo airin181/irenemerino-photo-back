@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import i18n from './config/i18n';
 import cookieParser from 'cookie-parser';
 import { languageMiddleware } from './middleware/languageMiddleware';
+import path from 'path';
 
 dotenv.config();
 
@@ -14,7 +15,7 @@ const port = process.env.PORT;
 const corsOptions = {
      origin: [
           'http://localhost:5173',
-          'https://airin181.github.io/irenemerino-photo/',
+          'https://airin181.github.io/irenemerino-photo',
      ], // Frontend URL
      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
      allowedHeaders: [
@@ -30,6 +31,7 @@ app.use(express.json());
 app.use(i18n.init);
 app.use(languageMiddleware);
 app.use('/api', routes);
+app.use(express.static(path.join(__dirname, 'dist')));
 
 // Iniciar el servidor
 app.listen(port, () => {
