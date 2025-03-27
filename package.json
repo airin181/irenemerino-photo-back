@@ -15,6 +15,7 @@
           "@types/i18n": "^0.13.12",
           "@types/node": "^22.13.6",
           "@types/nodemailer": "^6.4.17",
+          "copyfiles": "^2.4.1",
           "nodemon": "^3.1.9",
           "ts-node": "^10.9.2"
      },
@@ -24,9 +25,10 @@
      "main": "index.js",
      "scripts": {
           "test": "echo \"Error: no test specified\" && exit 1",
-          "dev": "nodemon src/index.ts",
-          "build": "tsc",
-          "start": "node dist/index.js"
+          "dev": "nodemon index.ts",
+          "build": "tsc && npm run copy-static",
+          "start": "node dist/index.js",
+          "copy-static": "copyfiles -u 1 src/static/contact-email-template.html dist/"
      },
      "repository": {
           "type": "git",

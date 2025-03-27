@@ -10,7 +10,8 @@
           "forceConsistentCasingInFileNames": true // Hacer que los nombres de archivo sean consistentes en mayúsculas/minúsculas
      },
      "include": [
-          "*.ts" // Incluir todos los archivos TypeScript en la carpeta "src"
+          "*.ts", // Incluir todos los archivos TypeScript en la carpeta "src"
+          "*.html"
      ],
      "exclude": [
           "node_modules", // Excluir la carpeta "node_modules"

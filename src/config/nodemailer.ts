@@ -1,5 +1,7 @@
 import nodemailer from 'nodemailer';
-require('dotenv').config();
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 // SMTP service for creating a transporter
 const transporter = nodemailer.createTransport({

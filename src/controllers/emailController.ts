@@ -16,7 +16,7 @@ export function sendContactFormEmail(req: Request, res: Response) {
           });
      } else {
           const htmlContent = renderEmailTemplate(
-               path.join(__dirname, 'contact-email-template.html'),
+               path.join(__dirname, '../static/contact-email-template.html'),
                req.body
           );
           const mailOptions = {
@@ -24,20 +24,20 @@ export function sendContactFormEmail(req: Request, res: Response) {
                to: process.env.MY_EMAIL,
                subject: `New contact message from ${name}`,
                html: htmlContent,
-               attachments: [
-                    {
-                         filename: 'contact-form-photo.jpg',
-                         path: path.join(
-                              __dirname,
-                              '..',
-                              'public',
-                              'images',
-                              'contact-form-photo.jpg'
-                         ),
+               // attachments: [
+               //      {
+               //           filename: 'contact-form-photo.jpg',
+               //           path: path.join(
+               //                __dirname,
+               //                '..',
+               //                'public',
+               //                'images',
+               //                'contact-form-photo.jpg'
+               //           ),
 
-                         cid: 'contactFormPhoto',
-                    },
-               ],
+               //           cid: 'contactFormPhoto',
+               //      },
+               // ],
           };
 
           transporter.sendMail(mailOptions, (error, info) => {
