@@ -17,7 +17,7 @@ export function sendContactFormEmail(req: Request, res: Response) {
           });
      } else {
           const htmlContent = renderEmailTemplate(
-               process.cwd() + 'src/static/contact-email-template.html',
+               process.cwd() + '/static/contact-email-template.html',
                req.body
           );
           const mailOptions = {
