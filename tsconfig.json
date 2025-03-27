@@ -11,7 +11,8 @@
      },
      "include": [
           "*.ts", // Incluir todos los archivos TypeScript en la carpeta "src"
-          "*.html"
+          "*.html",
+          "**/static/"
      ],
      "exclude": [
           "node_modules", // Excluir la carpeta "node_modules"
