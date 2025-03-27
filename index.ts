@@ -13,7 +13,10 @@ const app = express();
 const port = process.env.PORT;
 
 const corsOptions = {
-     origin: [`${process.env.LOCALHOST}`, `${process.env.FRONTEND_URL}`], // Frontend URL
+     origin: [
+          `${process.env.FRONTENDLOCALHOST}`,
+          `${process.env.FRONTEND_URL}`,
+     ], // Frontend URL
      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
      allowedHeaders: [
           'Content-Type',
@@ -33,5 +36,5 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 // Iniciar el servidor
 app.listen(port, () => {
-     console.log(`Servidor escuchando en ${process.env.LOCALHOST}`);
+     console.log(`Servidor escuchando en ${process.env.BACKENDLOCALHOST}`);
 });
