@@ -2,6 +2,7 @@ import transporter from '../config/nodemailer';
 import { Request, Response } from 'express';
 import fs from 'fs';
 import path from 'path';
+import process from 'process';
 
 export function sendContactFormEmail(req: Request, res: Response) {
      const { name, email, via, otherVia, message, termsAccepted } = req.body;
@@ -16,7 +17,7 @@ export function sendContactFormEmail(req: Request, res: Response) {
           });
      } else {
           const htmlContent = renderEmailTemplate(
-               'dist/static/contact-email-template.html',
+               process.cwd() + 'src/static/contact-email-template.html',
                req.body
           );
           const mailOptions = {
