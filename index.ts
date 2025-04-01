@@ -13,24 +13,11 @@ const app = express();
 const port = process.env.PORT;
 
 const corsOptions = {
-     origin: function (
-          origin: any,
-          callback: (err: Error | null, allow?: boolean) => void
-     ) {
-          const allowedOrigins = [
-               process.env.FRONTENDLOCALHOST,
-               process.env.FRONTEND_URL,
-          ];
-          if (
-               !origin ||
-               allowedOrigins.includes(origin) ||
-               origin.startsWith(process.env.FRONTEND_URL)
-          ) {
-               callback(null, true);
-          } else {
-               callback(new Error('Not allowed by CORS'));
-          }
-     },
+     origin: [
+          `${process.env.FRONTENDLOCALHOST}`,
+          `${process.env.FRONTEND_URL}`,
+     ], // Frontend URL
+
      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
      allowedHeaders: [
           'Content-Type',
