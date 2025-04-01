@@ -13,10 +13,7 @@ const app = express();
 const port = process.env.PORT;
 
 const corsOptions = {
-     origin: [
-          `${process.env.FRONTENDLOCALHOST}`,
-          `${process.env.FRONTEND_URL}`,
-     ], // Frontend URL
+     origin: [process.env.FRONTENDLOCALHOST, process.env.FRONTEND_URL], // Frontend URL
 
      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
      allowedHeaders: [
