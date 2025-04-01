@@ -18,33 +18,6 @@ const trustProxy = config.get<number>('server.trustProxy') || 1;
 app.set('trust proxy', trustProxy);
 
 const corsDomains = config.get<string | string[]>('server.cors');
-// const corsOptions = {
-//      origin: function (
-//           origin: any,
-//           callback: (err: Error | null, allow?: boolean) => void
-//      ) {
-//           const allowedOrigins = [
-//                process.env.FRONTENDLOCALHOST,
-//                process.env.FRONTEND_URL,
-//           ];
-//           if (
-//                !origin ||
-//                allowedOrigins.includes(origin) ||
-//                origin.startsWith(process.env.FRONTEND_URL)
-//           ) {
-//                callback(null, true);
-//           } else {
-//                callback(new Error('Not allowed by CORS'));
-//           }
-//      },
-//      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-//      allowedHeaders: [
-//           'Content-Type',
-//           'Authorization',
-//           'Access-Control-Allow-Origin',
-//      ],
-//      credentials: true, // allows cookies delivery
-// };
 if (corsDomains)
      app.use(
           cors({

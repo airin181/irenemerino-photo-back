@@ -1,0 +1,6 @@
+{
+     "server": {
+          "trustProxy": 1,
+          "cors": ["https://airin181.github.io"]
+     }
+}
