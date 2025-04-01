@@ -3,7 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import routes from './src/routes/routes';
 import dotenv from 'dotenv';
-import i18n from './src/config/i18n';
+import i18n from './config/i18n';
 import cookieParser from 'cookie-parser';
 import { languageMiddleware } from './src/middleware/languageMiddleware';
 import path from 'path';
@@ -18,6 +18,11 @@ const trustProxy = config.get<number>('server.trustProxy') || 1;
 app.set('trust proxy', trustProxy);
 
 const corsDomains = config.get<string | string[]>('server.cors');
+console.log(
+     '📌 CORS permitido para:',
+     config.get('server.cors') || '❌ No definido'
+);
+
 if (corsDomains)
      app.use(
           cors({
