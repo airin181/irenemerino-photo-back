@@ -3,6 +3,7 @@
     "trustProxy": true,
     "cors": [
       "https://airin181.github.io/irenemerino-photo",
+      "https://airin181.github.io",
       "http://localhost:5173"
     ]
   }
