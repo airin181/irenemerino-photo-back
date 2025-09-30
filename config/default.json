@@ -1,5 +1,9 @@
 {
-     "server": {
-          "trustProxy": true
-     }
+  "server": {
+    "trustProxy": true,
+    "cors": [
+      "https://airin181.github.io/irenemerino-photo",
+      "http://localhost:5173"
+    ]
+  }
 }
